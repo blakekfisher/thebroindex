@@ -157,39 +157,77 @@ var workQuestions = [
 
 var workScores = [2, 3, 4, 4, 5, 5, 6, 7, 8];
 
+var questionValue = 0;
 var score = 0;
+var questionIndex = 0;
+var scoreIndex = 0;
 
 var questions = document.querySelector(".question");
 var yes = document.querySelector(".yes");
 var no = document.querySelector(".no");
 var begin = document.querySelector(".begin");
-
-begin.addEventListener("click", function() {
-  console.log("clicked");
-  questionLoad();
-})
-
-yes.addEventListener("click", function() {
-  console.log("clicked");
-
-});
-
-no.addEventListener("click", function() {
-  console.log("clicked");
-});
+var points = document.querySelector(".points");
+var total = document.querySelector(".total");
+var beginCancel = true;
 
 
 // create a function to load the questions and tally the score
 function questionLoad() {
-  for(i=0; i <= workQuestions.length; i++) {
-    var index = 0;
-    questions.innerHTML = workQuestions[index];
-    index = index + 1;
-  };
+    questions.innerHTML = workQuestions[questionIndex];
+    questionIndex++;
 };
 
-// function scores() {
-//   for (i=0; i <= workScores.length; i++) {
-//
-//   };
-// };
+/*************Begin Function*****************
+  -ask a question
+  -set score as 0
+*********************************************/
+
+begin.addEventListener("click", function() {
+  console.log("clicked");
+  questionLoad();
+  points.innerHTML = "Question Value = " + workScores[scoreIndex];
+  total.innerHTML = "Total = " + score;
+});
+
+/**************Yes Function******************
+- register the click
+- increment the score by the amount in workScores
+- show the score on the screen TODO: Have a big score number flash on the screen in a modal
+- ask the nest question in the array (this should be a fuction)
+**********************************************/
+
+  yes.addEventListener("click", function() {
+    console.log("clicked");
+    points.innerHTML = "Question Value = " + workScores[scoreIndex];
+    runningTotal();
+    questionLoad();
+  });
+
+
+/********************No function***********************
+- register the click
+- leave the score
+- ask the next question in the array (this should be a fuction)
+- TODO: Insult the user from a list of insults and show on screen
+************************************************************/
+no.addEventListener("click", function() {
+  console.log("clicked");
+  questionLoad();
+});
+
+/********************Total Function ***********************
+- keep a running total of the added question values
+- show the total on the screen
+************************************************************/
+function runningTotal() {
+  score = score + workScores[scoreIndex];
+  total.innerHTML = "Total = " + score;
+  scoreIndex++;
+};
+
+/****************Finish Game Function************************
+- when the game is finished, show their final score
+- give them an awesome rating from a rating array
+- ask to play again
+- TODO: Give hints how to be more awesome
+*************************************************************/
