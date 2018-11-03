@@ -161,12 +161,35 @@ var score = 0;
 
 var questions = document.querySelector(".question");
 var yes = document.querySelector(".yes");
-var no = document.querySlector(".no");
+var no = document.querySelector(".no");
 var begin = document.querySelector(".begin");
 
+begin.addEventListener("click", function() {
+  console.log("clicked");
+  questionLoad();
+})
 
+yes.addEventListener("click", function() {
+  console.log("clicked");
 
+});
 
-// create a function to begin the test
+no.addEventListener("click", function() {
+  console.log("clicked");
+});
+
 
 // create a function to load the questions and tally the score
+function questionLoad() {
+  for(i=0; i <= workQuestions.length; i++) {
+    var index = 0;
+    questions.innerHTML = workQuestions[index];
+    index = index + 1;
+  };
+};
+
+// function scores() {
+//   for (i=0; i <= workScores.length; i++) {
+//
+//   };
+// };
