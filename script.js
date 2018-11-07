@@ -44,9 +44,9 @@ var workQuestions = [
   "shot a gruelling set of rapids",
   "lived off the land for 48 hours",
   "lived off pizza for 48 hours",
-  "Been shot, stabbed, hit by a car, or gored by a bull",
+  "been shot, stabbed, hit by a car, or gored by a bull",
   "written your name on the great wall of china",
-  "drunk a beer at the North or south pole",
+  "drunk a beer at the North or South pole",
   //Diet
   "eaten dirt",
   "eaten caviar",
@@ -66,7 +66,7 @@ var workQuestions = [
   "mastered the machette",
   "mastered gutting an animal",
   //Brawling
-  " been tossed out of a bar",
+  "been tossed out of a bar",
   "been tossed from a strip club",
   "defended a buddy with your fists",
   "fought over a woman",
